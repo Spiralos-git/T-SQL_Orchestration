@@ -21,9 +21,9 @@ In summary, the polling job:
 - In parallel, each JobAgent is running, polling to check if something is assigned to them. If yes, the JobAgent executes the task and updates the PJob.TaskPlanRun table.
 - As per the PJob.TaskPlanRun table updates, next eligible tasks are assigned, etc. This process continues until all tasks are executed (or an error occurs).
 
---------------------------------------------------------------------------------------------------------------------------------
-NOTE: The jobs provided in the Init.sql file are using a database named 'dev'. Please rename it in the script using your own db.
---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+NOTE: The jobs provided in the Init.sql file are using a database named 'dev'. Please rename it in Init.sql using your own db.
+------------------------------------------------------------------------------------------------------------------------------
 
 Just run the Init.sql file on your platform. It will create the Pjob schema, the tables (and the predefined tests), the stored procs and the jobs. 
 Familiarise yourself with the Pjob.TaskPlan table, check the Pjob.sp_test* stored procs (they are just example of tasks for demo purpose, you'll use your own later).
@@ -33,4 +33,5 @@ Adapt it to your tasks, etc.
 That's just a core engine. You can adapt it to monitor executions in real time (select PJob.TaskPlanRun), to report past executions (select PJob.TaskRunHistory), to create operational notifications or alerts (tweak/enhance error handling), etc.
 
 Feel free to get in touch.
+
 
